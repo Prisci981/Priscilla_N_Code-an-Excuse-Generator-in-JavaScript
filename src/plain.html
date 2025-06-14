@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Excuse Generator</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    #excuse { font-size: 1.5em; color: #333; }
+  </style>
+</head>
+<body>
+  <h1>Why I didn't do it...</h1>
+  <p id="excuse">Loading excuse...</p>
+
+  <script>
+    function generateExcuse() {
+      let who = ["My dog", "My grandma", "The mailman", "My neighbor"];
+      let action = ["ate", "stole", "burned", "lost"];
+      let what = ["my homework", "my phone", "the keys", "my project"];
+      let when = ["before class", "right on time", "while I was sleeping", "during lunch"];
+      let excuse = `${who[Math.floor(Math.random()*who.length)]} ${action[Math.floor(Math.random()*action.length)]} ${what[Math.floor(Math.random()*what.length)]} ${when[Math.floor(Math.random()*when.length)]}.`;
+      document.getElementById("excuse").innerHTML = excuse;
+    }
+    window.onload = generateExcuse;
+  </script>
+</body>
+</html>
